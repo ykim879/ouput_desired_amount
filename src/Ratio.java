@@ -17,4 +17,8 @@ public class Ratio {
                 ", galric=" + galric +
                 '}';
     }
+    public int CheckOutput() {
+        int result = 0;
+        return result;
+    }
 }
