@@ -8,4 +8,13 @@ public class Ratio {
         this.pepper = pepper;
         this.galric = galric;
     }
+
+    @Override
+    public String toString() {
+        return "Ratio{" +
+                "salt=" + salt +
+                ", pepper=" + pepper +
+                ", galric=" + galric +
+                '}';
+    }
 }
