@@ -33,11 +33,15 @@ public class FileReader {
                     if (values[0].equals("A")) {
                         if (values.length == 4) {
                             Bottle newBottle = new Bottle(Integer.parseInt(values[1]), Integer.parseInt(values[2]), Integer.parseInt(values[3]));
-                            result.add(newBottle);
-                            //ratio method
+                            if (!result.contains(newBottle)) {
+                                result.add(newBottle);
+                                //ratio method
+                            } else { result.add(new Bottle(-1,-1,-1)); }
                         } else {
                             throw new UnvalidFileException("The line starting with A has to have three following integers");
                         }
+                    } else if (values[0].equals("R")) {
+                        //remove and result
                     }
                     //method for check bottle --> in ratio check ouput = String
                     //solution
