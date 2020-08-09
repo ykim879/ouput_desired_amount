@@ -30,4 +30,3 @@ public class Bottle {
         return salt == c.salt && pepper == c.pepper && galric == c.galric;
     }
 }
-}
