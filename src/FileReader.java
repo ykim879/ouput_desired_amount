@@ -39,7 +39,7 @@ public class FileReader {
                             throw new UnvalidFileException("The line starting with A has to have three following integers");
                         }
                     } else if (values[0].equals("R")) {
-                        //remove and result
+
                     }
                     //method for check bottle --> in ratio check ouput = String
                     //solution

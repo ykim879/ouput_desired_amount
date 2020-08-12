@@ -44,7 +44,7 @@ public class Ratio {
             setResult(shelf, 1, last.getNumber());
             return 1;
         } else {
-
+            return multipleCheckOut(shelf, shelf.getTotal());
         }
     }
     private int multipleCheckOut(Shelf shelf, int n) {
