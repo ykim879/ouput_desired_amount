@@ -39,7 +39,9 @@ public class FileReader {
                             throw new UnvalidFileException("The line starting with A has to have three following integers");
                         }
                     } else if (values[0].equals("R")) {
-
+                        if(!shelf.removeBottle(values[1])) {
+                            System.out.println("Invalid Remove statement has occured. The program will ignore the statement");
+                        }
                     }
                     //method for check bottle --> in ratio check ouput = String
                     //solution

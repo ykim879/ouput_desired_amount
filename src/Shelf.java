@@ -23,9 +23,19 @@ public class Shelf {
     public void addBottle(Bottle bottle) {
         bottles.add(bottle);
     }
-    public void removeBottle(int n) {
+    public boolean removeBottle(int n) {
         //since bottle has unique name and removing is indicating the unique name, deal with iterator
-        Iterator current = bottles.iterator();
+        Iterator iterator = bottles.iterator();
+        int index = 0;
+        while (iterator.hasNext()) {
+            Bottle curr = (Bottle)iterator.next();
+            if(curr.getNumber() == n) {
+                bottles.remove(index);
+                return true;
+            }
+            index++;
+        }
+        return false;
     }
     public LinkedList<Bottle> getBottles() {
         return bottles;
