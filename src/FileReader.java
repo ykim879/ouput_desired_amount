@@ -32,11 +32,11 @@ public class FileReader {
                     if (line > totalCommand + 2) { break;}
                     if (values[0].equals("A")) {
                         if (values.length == 4) {
-                            Bottle newBottle = new Bottle(Integer.parseInt(values[1]), Integer.parseInt(values[2]), Integer.parseInt(values[3]));
-                            if (!result.contains(newBottle)) {
+                            Bottle newBottle = new Bottle(Integer.parseInt(values[1]), Integer.parseInt(values[2]), Integer.parseInt(values[3]), line - 2);
+                            if (!result.contains(newBottle)) { // need to change call checkOut method for each addition
                                 result.add(newBottle);
                                 //ratio method
-                            } else { result.add(new Bottle(-1,-1,-1)); }
+                            } else { result.add(new Bottle(-1,-1,-1, line - 2)); }
                         } else {
                             throw new UnvalidFileException("The line starting with A has to have three following integers");
                         }

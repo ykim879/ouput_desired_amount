@@ -17,9 +17,33 @@ public class Ratio {
                 ", galric=" + galric +
                 '}';
     }
-    public int CheckOutput(Bottle[] bottles) {
+    public int checkOutput(Shelf shelf) {
         int result = 0;
-        if()
+        if(shelf.getTotal() == 1) {
+            return oneCheckOut(shelf);
+        } else {
+            if (shelf.getLastResult() != 0) {
+               return shelf.getLastResult();
+            } else {
+                return multipleCheckOut(shelf);
+            }
+        }
         return result;
+    }
+    private int oneCheckOut(Shelf shelf) {
+        Bottle first = shelf.getBottles().peek();
+        if(first.getSalt() == salt && first.getPepper() == pepper && first.getGalric() == galric) {
+            shelf.setLastResult(1);
+            shelf.setLastResultChart(first.getNumber());
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+    private int multipleCheckOut(Shelf shelf) {
+
+    }
+    private int multipleCheckOut(Shelf shelf, int n) {
+
     }
 }
