@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class FileReader {
     private Scanner scanner;
     private Ratio ratio;
-    private LinkedList<Bottle> result;
+    private LinkedList<Bottle> result;// have to change into array
 
     public FileReader(String fileName) {
         try {

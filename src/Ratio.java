@@ -17,8 +17,9 @@ public class Ratio {
                 ", galric=" + galric +
                 '}';
     }
-    public int CheckOutput() {
+    public int CheckOutput(Bottle[] bottles) {
         int result = 0;
+        if()
         return result;
     }
 }
