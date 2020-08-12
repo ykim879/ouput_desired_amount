@@ -3,7 +3,7 @@ import java.util.LinkedList;
 public class Shelf {
     private LinkedList<Bottle> bottles;
     private int lastResult;
-    private boolean[] lastResultChart;
+    private boolean[] lastResultChart;// may need to change to integer LinkedList
     //put constructor includes int as parameter
 
     public void setLastResult(int lastResult) {

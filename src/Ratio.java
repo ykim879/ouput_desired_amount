@@ -18,7 +18,6 @@ public class Ratio {
                 '}';
     }
     public int checkOutput(Shelf shelf) {
-        int result = 0;
         if(shelf.getTotal() == 1) {
             return oneCheckOut(shelf);
         } else {
@@ -28,22 +27,31 @@ public class Ratio {
                 return multipleCheckOut(shelf);
             }
         }
-        return result;
     }
     private int oneCheckOut(Shelf shelf) {
         Bottle first = shelf.getBottles().peek();
         if(first.getSalt() == salt && first.getPepper() == pepper && first.getGalric() == galric) {
-            shelf.setLastResult(1);
-            shelf.setLastResultChart(first.getNumber());
+            setResult(shelf, 1, first.getNumber());
             return 1;
         } else {
             return 0;
         }
     }
     private int multipleCheckOut(Shelf shelf) {
+        //check first last checkOut
+        Bottle last = shelf.getBottles().getLast();
+        if (last.getPepper() == pepper && last.getSalt() == salt && last.getGalric() == galric) {
+            setResult(shelf, 1, last.getNumber());
+            return 1;
+        } else {
 
+        }
     }
     private int multipleCheckOut(Shelf shelf, int n) {
 
+    }
+    private void setResult(Shelf shelf, int total, int bottleNum) {
+        shelf.setLastResult(1);
+        shelf.setLastResultChart(bottleNum);
     }
 }
