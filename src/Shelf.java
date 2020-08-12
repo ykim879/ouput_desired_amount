@@ -4,7 +4,13 @@ public class Shelf {
     private LinkedList<Bottle> bottles;
     private int lastResult;
     private boolean[] lastResultChart;// may need to change to integer LinkedList
-    //put constructor includes int as parameter
+
+    public Shelf(int total) {
+        bottles = new LinkedList<>();
+        lastResult = 0;
+        lastResultChart = new boolean[total];
+    }
+//put constructor includes int as parameter
 
     public void setLastResult(int lastResult) {
         this.lastResult = lastResult;
