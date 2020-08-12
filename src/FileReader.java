@@ -6,12 +6,11 @@ import java.util.Scanner;
 public class FileReader {
     private Scanner scanner;
     private Ratio ratio;
-    private LinkedList<Bottle> result;// have to change into array
+    private Shelf shelf;
 
     public FileReader(String fileName) {
         try {
             scanner = new Scanner(new File(fileName));
-            result = new LinkedList<>();
             int line = 0;
             while (scanner.hasNextLine()) {
                 line++;
@@ -27,16 +26,15 @@ public class FileReader {
                     }
                 } else if (line == 2) {
                     totalCommand = Integer.parseInt(nextLine);
+                    shelf = new Shelf(totalCommand);
                 } else {
                     String[] values = nextLine.split(" ");
                     if (line > totalCommand + 2) { break;}
                     if (values[0].equals("A")) {
                         if (values.length == 4) {
                             Bottle newBottle = new Bottle(Integer.parseInt(values[1]), Integer.parseInt(values[2]), Integer.parseInt(values[3]), line - 2);
-                            if (!result.contains(newBottle)) { // need to change call checkOut method for each addition
-                                result.add(newBottle);
-                                //ratio method
-                            } else { result.add(new Bottle(-1,-1,-1, line - 2)); }
+                            shelf.addBottle(newBottle);
+                            ratio.checkOutput(shelf);
                         } else {
                             throw new UnvalidFileException("The line starting with A has to have three following integers");
                         }

@@ -19,6 +19,9 @@ public class Shelf {
     public void setLastResultChart(int index) {
         lastResultChart[index] = true;
     }
+    public void addBottle(Bottle bottle) {
+        bottles.add(bottle);
+    }
 
     public LinkedList<Bottle> getBottles() {
         return bottles;
